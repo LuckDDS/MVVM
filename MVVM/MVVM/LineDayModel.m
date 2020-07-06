@@ -16,7 +16,7 @@
 /// 浅拷贝
 /// @param zone zone description
 - (id)copyWithZone:(NSZone *)zone{
-    //有子类时这么写
+    //有子类时这么写,因为子类会调用父类的copy 方法
     //LineDayModel * model = [[[self class] allocWithZone:zone]init];
     LineDayModel * model = [[LineDayModel allocWithZone:zone]init];
     model.arrData = [self.arrData copy];
@@ -27,14 +27,12 @@
 }
 
 - (id)mutableCopyWithZone:(nullable NSZone *)zone{
-    
     LineDayModel * dayModel = [[LineDayModel allocWithZone:zone]init];
     dayModel.arrData = [self.arrData mutableCopy];
     dayModel.date = [self.date mutableCopy];
     dayModel.highest = [self.highest mutableCopy];
     dayModel.lowest = [self.lowest mutableCopy];
     return dayModel;
-    
 }
 
 @end
