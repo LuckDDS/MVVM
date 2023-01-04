@@ -20,9 +20,12 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.viewModel = [[LineViewModel alloc]init];
+    LineViewModel * v = self.viewModel;
     self.lineView = [[LineView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     self.lineView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.lineView];
+    
+    
     // Do any additional setup after loading the view.
 }
 
